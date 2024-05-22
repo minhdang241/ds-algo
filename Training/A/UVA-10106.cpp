@@ -6,13 +6,11 @@ int main() {
     // Fast I/O
     ios::sync_with_stdio(0);
     cin.tie(0);
-    ll x;
+    ll x, y;
     while (cin >> x) {
-        if (x == 0) return 0;
-        ll i = sqrt(x);
-        //cout << i << " " << i*i<< " "<< x << "\n";
-        if (i*i == x) cout << "yes\n";
-        else cout << "no\n";
+        cin >> y;
+        cout << (x*y) << endl;
     }
+
     return 0;
 }
