@@ -6,9 +6,9 @@ int main() {
     // Fast I/O
     ios::sync_with_stdio(0);
     cin.tie(0);
-    ll n,m,a;
-    cin >> n >> m >> a;
-    cout << fixed << (ll)(ceil(m*1.0/a) * ceil(n*1.0/a));
-    
+    int n,k;
+    cin >> n >> k;
+
+
     return 0;
 }
