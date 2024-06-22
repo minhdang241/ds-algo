@@ -1,6 +1,11 @@
-#include "bits/stdc++.h";
+#include "bits/stdc++.h"
+#include <string>
+#include <type_traits>
+#include <unordered_map>
+#include <unordered_set>
 using namespace std;
-template <typename A, typename B> string to_string(pair<A, B> p);
+template <typename A, typename B> 
+string to_string(pair<A, B> p);
 
 template <typename A, typename B, typename C>
 string to_string(tuple<A, B, C> p);
@@ -28,6 +33,20 @@ string to_string(vector<bool> v) {
   return res;
 }
 
+string to_string(unordered_set<char> v) {
+  bool first = true;
+  string res = "{";
+  for (const auto& c: v) {
+    if (!first) {
+      res += ", ";
+    }
+    first = false;
+    res += to_string(string(1, c));
+  }
+  res += "}";
+  return res;
+}
+
 template <size_t N> string to_string(bitset<N> v) {
   string res = "";
   for (size_t i = 0; i < N; i++) {
@@ -36,7 +55,9 @@ template <size_t N> string to_string(bitset<N> v) {
   return res;
 }
 
-template <typename A> string to_string(A v) {
+
+template <typename A> 
+string to_string(A v) {
   bool first = true;
   string res = "{";
   for (const auto &x : v) {
@@ -68,8 +89,17 @@ string to_string(tuple<A, B, C, D> p) {
 
 void debug_out() { cout << endl; }
 
-template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) {
+template <typename Head, typename... Tail> 
+void debug_out(Head H, Tail... T) {
   cout << " " << to_string(H);
   debug_out(T...);
 }
 #define debug(...) cout << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+
+int main() {
+  cout << "a";
+  unordered_set<char> s{'a'};
+  debug(s);
+  return 0;
+}
+
