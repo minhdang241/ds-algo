@@ -96,10 +96,3 @@ void debug_out(Head H, Tail... T) {
 }
 #define debug(...) cout << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 
-int main() {
-  cout << "a";
-  unordered_set<char> s{'a'};
-  debug(s);
-  return 0;
-}
-
