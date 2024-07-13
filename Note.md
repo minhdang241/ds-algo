@@ -1,3 +1,7 @@
+# Binary Search Tree (BST)
+Inorder traversal -> increasing order.
+
+
 # Sliding Window
 Pattern: (Longest|Shortest|Number of) (Substrings|Subarrays) with (At most|Exactly) K elements that fit (some condition). This usually requires TC as O(N).
     - Longest -> While loop invalid condition
