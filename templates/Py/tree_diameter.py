@@ -2,8 +2,10 @@ from collections import defaultdict
 from typing import List
 
 def treeDiameter(edges: List[List[int]]) -> int:
-    G = defaultdict(list)
-
+    """
+    Find the furthest node from the first node.
+    Find the furthest node from the found node from step 1.    G = defaultdict(list)
+    """
     for a, b in edges:
         G[a].append(b)
         G[b].append(a)
