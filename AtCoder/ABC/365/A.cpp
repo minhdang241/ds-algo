@@ -1,4 +1,5 @@
 #include "bits/stdc++.h"
+#include <algorithm>
 #include <string>
 #include <type_traits>
 #include <unordered_map>
@@ -95,12 +96,23 @@ void debug_out(Head H, Tail... T) {
   debug_out(T...);
 }
 #define debug(...) cout << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
-#define REP(i, a, b) for (int i = a; i <= b; i++)
-typedef long long ll;
-typedef pair<int, int> ii;
-typedef vector<int> vi;
-typedef vector<ii> vii;
+
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
+  int y;
+  cin >> y;
+  if (y % 4 != 0) {
+    cout << 365;
+  } else {
+    if (y % 100 != 0) {
+      cout << 366;
+    } else {
+      if (y % 400 != 0) {
+        cout << 365;
+      } else {
+        cout << 366;
+      }
+    }
+  }
 }

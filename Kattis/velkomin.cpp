@@ -95,12 +95,5 @@ void debug_out(Head H, Tail... T) {
   debug_out(T...);
 }
 #define debug(...) cout << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
-#define REP(i, a, b) for (int i = a; i <= b; i++)
-typedef long long ll;
-typedef pair<int, int> ii;
-typedef vector<int> vi;
-typedef vector<ii> vii;
-int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
-}
+
+int main() { cout << "VELKOMIN!"; };

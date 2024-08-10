@@ -1,8 +1,11 @@
 #include "bits/stdc++.h"
+#include <algorithm>
 #include <string>
 #include <type_traits>
 #include <unordered_map>
 #include <unordered_set>
+#include <utility>
+#include <vector>
 using namespace std;
 template <typename A, typename B> 
 string to_string(pair<A, B> p);
@@ -96,11 +99,33 @@ void debug_out(Head H, Tail... T) {
 }
 #define debug(...) cout << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #define REP(i, a, b) for (int i = a; i <= b; i++)
-typedef long long ll;
-typedef pair<int, int> ii;
-typedef vector<int> vi;
-typedef vector<ii> vii;
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
+  int N, x;
+  cin >> N;
+  struct ComparePair {
+    bool operator()(const std::pair<int, int> &p1,
+                    const std::pair<int, int> &p2) {
+      return p1.first < p2.first; // Max heap based on the first element
+    }
+  };
+  priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, ComparePair> max_heap;
+
+  REP(i, 1, N) {
+    cin >> x;
+    max_heap.push(make_pair(x, i));
+  }
+  max_heap.pop();
+  cout << max_heap.top().second;
 }
+
+
+
+
+
+
+
+
+
+
