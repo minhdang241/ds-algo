@@ -1,5 +1,5 @@
-# My competitive programing journey (Updated: 16/02/24)
-Training Plan: https://docs.google.com/spreadsheets/d/1y9hZqZVp2j2Rg_wEK4SaECV72SGz_WqwJxE_iOoDshE/edit#gid=1160016643
+# Competitive programing training guide (Updated: 16/02/24)
+Leetcode: https://leetcode.com/u/minhdg241/
 
 Tips to be competitive:
 1. Type Code Faster! (DONE)
@@ -8,62 +8,27 @@ Tips to be competitive:
 4. Master Programming Languages: Python (DONE)
 5. Master The Art Of Testing Code. (WIP)
 6. Practice And More Practice. (WIP)
-7. Using Black Box Method to learn DS&Algo
-    - Step 1: Avoid remember the implementation.
-    - Step 2: Learn how to recognize and apply the DS or Algo into a real problem.
 
-# DS, Algo, and Techniques
-## Binary Search Tree (BST)
-Inorder traversal -> increasing order.
 
+# Strategy to learn
+1. Using Black Box method to learn **how to apply** DS/Algo quickly
+    - Step 1: Avoid trying to learn and remember the implementation at the first place.
+    - Step 2: Instead, trying to learn how to recognize the pattern and apply the DS/Algo into a problem.
+
+# Tips / Tricks
+## Binary Search
+**Pattern:** Find minimum of something that we can discover some kind of monotonicity, for example, if condition(k) is True, then condition(k+1) is also True.
+- Find minimum of maximum
 
 ## Sliding Window
-Pattern: (Longest|Shortest|Number of) (Substrings|Subarrays) with (At most|Exactly) K elements that fit (some condition). This usually requires TC as O(N).
+**Pattern:**
+- (Longest | Shortest | Number of) (Substrings | Subarrays) with (At most | Exactly) K elements that fit (some condition). 
     - Longest -> While loop invalid condition
     - Shortest/Minimum -> While loop valid condition
     - Number of subarray/substring that has atmost/exactly k elements
-```
-    template:
-    for (right = 0; right < n; right++) {
-        update window with element at right pointer
-        while condition is invalid:
-            remove element at the left pointer
-        update the global value
-    }
-```
 
-Pattern: Find the minimum substring in s1 contains string s2 .
-```
-    template:
-    using have and need variable
-    cnt = Counter(s2)
-    have, need = 0, len(cnt)
-    condition:
-        while have == need:
-```
-# Binary Search
-Pattern: Find minimum of something and we can discover some kind of monotonicity, for example, if condition(k) is True, then condition(k+1) is also True.
-```
-    template:
-    l, r = min, max
-    while l < r:
-        m = (l+r)//2
-        if condition(m):
-            r = m
-        else:
-            l = m + 1
-    return left | left - 1 depends on the problem.
-```
-Left represents the minimal k satisfying the condition. 
-
-Proof to show that a result is available:
-using condition(k) and condition(k-1) with k is the minimal value satisfying the condition. Thus, if condition(k-1) is also True then k should be available to select.
-
-# Two pointers
-Technique: two pointers from both ends
-
-# Monotonic stack
-Pattern: problem dealing with next greater, previous smaller elements in an array.
+## Monotonic stack
+**Pattern:** problem dealing with next greater, previous smaller elements in an array.
 
 There are 4 types of monotonic stacks
 - Strictly increasing
@@ -77,14 +42,17 @@ There are 4 types of monotonic stacks
 |  previous greater  |  decreasing (strict)         |  stackTop <= current    |  outside while loop   |
 |  next smaller      |  increasing (equal allowed)  |  stackTop > current     |  inside while loop    |
 |  previous smaller  |  increasing (strict)         |  stackTop >= current    |  outside while loop   |
-# Graph
-1. For directed graph, to detect cycle with DFS we can't use a visited array. Instead, using the COLOR algorithm.
-    - LC 1059
 
+## Graph
+**Pattern:**
+- Shortest path with positive weights: **Dijkstra**
+- Put something before other thing: **Topological sort**
+- Detect cycle with DFS in directed graph: **COLOR algorithm**
 
-# Tree
+## Binary Search Tree (BST)
+Notes: Inorder traversal -> increasing order.
 
-# BackTracking
+## BackTracking
 Algorithm to find all solutions by incrementally building up candidates to the solutions and abandoning a candidate as soon as it determines the candidates cannot lead to a valid solution
 
 ```
@@ -105,15 +73,7 @@ def backtrack(candidate):
 ```
 
 ## Dynamic Programming
-Question Pattern:
-- Asking for optimum value (maximum/minimum/longest/shortest).
-- The future decision depends on the earlier decision.
-
-Template:
-- Decide the meaning of the function based on the question.
-- Find the base case: Ask yourself: What state(s) I can find the solution without DP.
-
-DP Pattern:
+**Pattern:** Asking for optimum value (maximum/minimum/longest/shortest). The future decision depends on the earlier decision.
 - Knapsack
   Given: Items with price and weight.
   Goal: Fill the bag to the max profit.
