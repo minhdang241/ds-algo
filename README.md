@@ -94,6 +94,9 @@ def backtrack(candidate):
 - DP on grid
 - Kadane's algorithm
 
+**Tips**:
+- Optimize the tuple, when using it as a parameter in the recursive function, by bit mask.
+
 
 
 
