@@ -2,11 +2,10 @@ from collections import defaultdict
 import heapq
 
 
-def dijkstra(graph, weights, size, source, target=None):
+def dijkstra(graph, weights, source, target=None):
     pq = [(0, source)]
     dists = defaultdict(lambda: float("inf"))
     prevs = defaultdict(lambda: None)
-    visited = set()
     dists[source] = 0
     while pq:
         dist, node = heapq.heappop(pq)
@@ -38,6 +37,6 @@ if __name__ == "__main__":
     size = 5
     source = 0
     target = None
-    dists, prevs = dijkstra(graph, weights, size, source, target)
+    dists, prevs = dijkstra(graph, weights, source, target)
     assert (dists == {0: 0, 1: 2, 2: 6, 3: 5, 4: 7})
     assert (prevs == {1: 0, 2: 0, 3: 1, 4: 2})

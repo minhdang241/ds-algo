@@ -1,11 +1,11 @@
-# Competitive programing training guide (Updated: 16/02/24)
+# Competitive programing training guide
 Leetcode: https://leetcode.com/u/minhdg241/
 
 Tips to be competitive:
 1. Type Code Faster! (DONE)
 2. Quickly Identify Problem Types. (WIP)
 3. Do Algorithm Analysis. (WIP)
-4. Master Programming Languages: Python (DONE)
+4. Master Programming Languages: Python (DONE) / C++ (WIP)
 5. Master The Art Of Testing Code. (WIP)
 6. Practice And More Practice. (WIP)
 
@@ -26,6 +26,8 @@ Tips to be competitive:
     - Longest -> While loop invalid condition
     - Shortest/Minimum -> While loop valid condition
     - Number of subarray/substring that has atmost/exactly k elements
+
+- Number of subarray with value in range(l, r) = Number of subarray with value at most r - Number of subarray with value at most l.
 
 ## Monotonic stack
 **Pattern:** problem dealing with next greater, previous smaller elements in an array.
