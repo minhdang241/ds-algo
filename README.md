@@ -99,6 +99,17 @@ def backtrack(candidate):
 **Tips**:
 - Optimize the tuple, when using it as a parameter in the recursive function, by bit mask.
 
+## Misc
+1. How to distribute a sum (s) into an array with lenght of m and each element having values within ranges [0, n]
+```
+int distributed_mean = s / m;
+int mod = s % m;
+vector<int> ans(m, distributed_mean);
+for (int i = 0; i < mod; i++) {
+    ans[i]++;
+}
+```
+
 
 
 
