@@ -159,8 +159,9 @@ public:
 };
 
 int main() {
-  auto sol = Solution();
-  vector<vector<int>>mat{{ 1, 1, 1 }, { 1, 0, 1 }, { 0, 0, 0 }};
-  sol.minFlips(mat);
+  //auto sol = Solution();
+  //vector<vector<int>>mat{{ 1, 1, 1 }, { 1, 0, 1 }, { 0, 0, 0 }};
+  //sol.minFlips(mat);
+  cout << ((-1)%4);
   return 0;
 }
