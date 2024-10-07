@@ -65,7 +65,11 @@ string to_string(A v) {
       res += ", ";
     }
     first = false;
-    res += to_string(x);
+    if constexpr (std::is_same_v<typename A::value_type, char>) {
+      res += string(1, x);
+    } else {
+      res += to_string(x);
+    }
   }
   res += "}";
   return res;
