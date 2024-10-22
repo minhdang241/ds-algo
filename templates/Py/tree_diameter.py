@@ -1,11 +1,15 @@
+from __future__ import annotations
+
 from collections import defaultdict
 from typing import List
 
-def treeDiameter(edges: List[List[int]]) -> int:
+
+def tree_diameter(edges: List[List[int]]) -> int:
     """
     Find the furthest node from the first node.
-    Find the furthest node from the found node from step 1.    G = defaultdict(list)
+    Find the furthest node from the found node from step 1.
     """
+    G = defaultdict(list)
     for a, b in edges:
         G[a].append(b)
         G[b].append(a)
@@ -27,7 +31,7 @@ def treeDiameter(edges: List[List[int]]) -> int:
                 dfs(neighbor, visited, G, l + 1)
 
     dfs(0, visited, G, 0)
-    
+
     visited = set()
     dfs(f_node, visited, G, 0)
     return max_val
