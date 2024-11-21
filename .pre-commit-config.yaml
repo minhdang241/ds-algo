@@ -23,3 +23,10 @@ repos:
     rev: 23.1a1
     hooks:
       - id: black
+
+  - repo: https://github.com/pocc/pre-commit-hooks
+    rev: master
+    hooks:
+      - id: clang-format
+        args: [--style=Google]
+      - id: clang-tidy

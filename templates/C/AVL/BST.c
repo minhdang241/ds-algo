@@ -20,6 +20,9 @@ void delete(TreeNodePtr *root_ptr, long value);
 TreeNodePtr search(TreeNodePtr root_ptr, long value);
 void inorder_traversal(TreeNodePtr root_ptr);
 
+// Internal use
+static TreeNodePtr find_min_value_node(TreeNodePtr root_ptr);
+
 int main(void) {
   long nums[] = {50, 20, 10, 30, 40, 70, 60, 100, 90, 80};
   TreeNodePtr root = NULL;
@@ -65,7 +68,7 @@ void insert(TreeNodePtr *root_ptr, long value) {
   }
 }
 
-TreeNodePtr find_min_value_node(TreeNodePtr root_ptr) {
+static TreeNodePtr find_min_value_node(TreeNodePtr root_ptr) {
   TreeNodePtr curr = root_ptr;
   while ((curr != NULL) && (curr->left != NULL)) {
     curr = curr->left;
