@@ -14,14 +14,14 @@ struct TreeNode {
 
 typedef struct TreeNode *TreeNodePtr;
 
-TreeNodePtr create_node(long value, TreeNodePtr left, TreeNodePtr right);
 void insert(TreeNodePtr *root_ptr, long value);
 void delete(TreeNodePtr *root_ptr, long value);
 TreeNodePtr search(TreeNodePtr root_ptr, long value);
-void inorder_traversal(TreeNodePtr root_ptr);
+void inorder_traverse(TreeNodePtr root_ptr);
 
 // Internal use
 static TreeNodePtr find_min_value_node(TreeNodePtr root_ptr);
+static TreeNodePtr create_node(long value, TreeNodePtr left, TreeNodePtr right);
 
 int main(void) {
     long nums[] = {50, 20, 10, 30, 40, 70, 60, 100, 90, 80};
@@ -30,7 +30,7 @@ int main(void) {
     for (int i = 0; i < size; i++) {
         insert(&root, nums[i]);
     }
-    inorder_traversal(root);
+    inorder_traverse(root);
 
     printf("Testing search \n");
     assert(search(root, 90) != NULL);
@@ -39,7 +39,7 @@ int main(void) {
     printf("\n");
     for (int i = 0; i < size; i++) {
         delete (&root, nums[i]);
-        inorder_traversal(root);
+        inorder_traverse(root);
         printf("\n");
     }
 
@@ -68,7 +68,7 @@ void insert(TreeNodePtr *root_ptr, long value) {
     }
 }
 
-static TreeNodePtr find_min_value_node(TreeNodePtr root_ptr) {
+TreeNodePtr find_min_value_node(TreeNodePtr root_ptr) {
     TreeNodePtr curr = root_ptr;
     while ((curr != NULL) && (curr->left != NULL)) {
         curr = curr->left;
@@ -115,12 +115,12 @@ TreeNodePtr search(TreeNodePtr root, long value) {
     }
 }
 
-void inorder_traversal(TreeNodePtr root_ptr) {
+void inorder_traverse(TreeNodePtr root_ptr) {
     if (root_ptr == NULL) {
         return;
     } else {
-        inorder_traversal(root_ptr->left);
+        inorder_traverse(root_ptr->left);
         printf("%ld ", root_ptr->node_value.value);
-        inorder_traversal(root_ptr->right);
+        inorder_traverse(root_ptr->right);
     }
 }
