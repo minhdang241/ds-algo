@@ -29,7 +29,7 @@ print("peek number: ", -1 * peekNum)
 popNum = heapq.heappop(maxHeap)
 
 # The result is 3
-print("pop number: ", -1 *  popNum)
+print("pop number: ", -1 * popNum)
 
 # Check the largest element after deleting 3, the result is 2
 print("peek number: ", -1 * maxHeap[0])
