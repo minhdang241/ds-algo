@@ -28,6 +28,7 @@ Tips to be competitive:
     - Number of subarray/substring that has atmost/exactly k elements
 
 - Number of subarray with value in range(l, r) = Number of subarray with value at most r - Number of subarray with value at most l.
+**Note**: whenever having some negative sums, use prefix sum with a hashmap instead.
 
 ## Monotonic stack
 **Pattern:** problem dealing with next greater, previous smaller elements in an array.
