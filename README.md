@@ -31,7 +31,13 @@ Tips to be competitive:
 **Note**: whenever having some negative sums, use prefix sum with a hashmap instead.
 
 ## Monotonic stack
-**Pattern:** problem dealing with next greater, previous smaller elements in an array.
+**Pattern:** problem dealing with:
+- Next greater, 
+- Next smaller, 
+- Previous greater. 
+- Previous smaller.
+- Lexicographically smallest/greatest.
+- Histogram related problems.
 
 There are 4 types of monotonic stacks
 - Strictly increasing
