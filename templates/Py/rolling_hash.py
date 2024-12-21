@@ -13,7 +13,7 @@ def rabin_karp(s: str, t: str):
   To avoid collision  we can try to use 2 different hashes using different p and/or different m
   """
   p = 31
-  m = sys.maxisze
+  m = sys.maxsize
   S = len(s)
   T = len(t)
 
