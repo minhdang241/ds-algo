@@ -1,3 +1,5 @@
+"""Segment tree for dynamic range max query"""
+
 from __future__ import annotations
 
 
