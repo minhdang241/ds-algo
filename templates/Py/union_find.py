@@ -15,7 +15,7 @@ class UnionFind:
       return
 
     if self.ranks[root_x] > self.ranks[root_y]:
-      self.root[root_y] = root_x
+      self.roots[root_y] = root_x
     elif self.ranks[root_x] < self.ranks[root_y]:
       self.roots[root_x] = root_y
     else:
