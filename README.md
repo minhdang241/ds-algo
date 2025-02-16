@@ -90,8 +90,8 @@ Inorder traversal -> increasing order.
 - Optimize the tuple, when using it as a parameter in the recursive function, by bit mask.
 
 ## Counting:
-- Count the number of solution for a + b <= t which a in [0,A] and b in [0, B]
-  Formular: S(t) - S(t - (A + 1)) - S(t - (B + 1)) + S(t - (A + B + 2)), which S(t) = (t + 1)*(t + 2) // 2
+- Count the number of solutions for a + b <= t with a in [0,A] and b in [0,B] <br>
+  `S(t) - S(t - (A + 1)) - S(t - (B + 1)) + S(t - (A + B + 2)), which S(t) = (t + 1)*(t + 2) // 2`
 
 
 
