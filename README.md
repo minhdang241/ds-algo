@@ -84,10 +84,16 @@ Inorder traversal -> increasing order.
         Problem:
 - Matrix chain multiplication
 - DP on grid
-- Kadane's algorithm
+- Kadane's algorithm: find the subarray with maximum value, including the negative and positive elements
 
 **Tips**:
 - Optimize the tuple, when using it as a parameter in the recursive function, by bit mask.
+
+## Counting:
+- Count the number of solution for a + b <= t which a in [0,A] and b in [0, B]
+  Formular: S(t) - S(t - (A + 1)) - S(t - (B + 1)) + S(t - (A + B + 2)), which S(t) = (t + 1)*(t + 2) // 2
+
+
 
 ## Misc
 1. How to distribute a sum (s) into an array with lenght of m and each element having values within ranges [0, n]
