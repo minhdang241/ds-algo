@@ -13,6 +13,8 @@ Tips to be competitive:
 2. Topic-wise for solving hard problems quickly
 
 # Tips / Tricks
+## Greedy
+- Non-overlapped intervals: choose the one with earliest end time to maximize the number of intervals.
 ## Hashing
 **Pattern**: compare string or list in O(1) => used to optimize the solution in case TLE.
 
