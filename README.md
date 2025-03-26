@@ -2,7 +2,7 @@
 Leetcode: https://leetcode.com/u/minhdg241/
 
 Tips to be competitive:
-1. Type Code Faster! (WIP) 
+1. Type Code Faster! (WIP: 110 wpm)
 2. Master Programming Languages: Python (WIP) / C++ (WIP)
 3. Practice, practice and practice
 
@@ -15,6 +15,8 @@ Tips to be competitive:
 # Tips / Tricks
 ## Greedy
 - Non-overlapped intervals: choose the one with earliest end time to maximize the number of intervals.
+- Medium value yields the minimum operations to make all the values equal.
+
 ## Hashing
 **Pattern**: compare string or list in O(1) => used to optimize the solution in case TLE.
 
