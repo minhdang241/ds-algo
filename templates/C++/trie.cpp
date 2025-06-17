@@ -1,8 +1,10 @@
 #include <string>
+#include <unordered_map>
+
 using namespace std;
 
 struct TrieNode {
-  unordered_map<char, TrieNode *> children{};
+  std::unordered_map<char, TrieNode *> children{};
   bool is_word = false;
 };
 
