@@ -86,7 +86,8 @@ Inorder traversal -> increasing order.
 - LCS
 - LIS
         Problem:
-- Matrix chain multiplication
+- Matrix chain multiplication:
+    - Burst Balloon
 - DP on grid
 - Kadane's algorithm: find the subarray with maximum value, including the negative and positive elements
 
