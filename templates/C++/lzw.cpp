@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <cassert>
 
 
 template<typename T>
@@ -43,9 +44,9 @@ auto lzw_decode(std::vector<int>& vec) -> std::string {
         dict[i] = std::string(1, i);
     }
     auto dict_size = 256;
-    auto oss = std::ostringstream();
-    oss << dict[vec[0]];
     auto p = dict[vec[0]];
+    auto oss = std::stringstream();
+    oss << p;
     for (auto i = 1; i < vec.size(); i++) {
         auto c = vec[i];
         auto entry = std::string();
@@ -53,9 +54,10 @@ auto lzw_decode(std::vector<int>& vec) -> std::string {
             entry = dict[c];
         } else if (c == dict_size) {
             entry = p + p[0];
-        } 
+        }
+
         oss << entry;
-        dict[dict_size] = p + entry[0];
+        dict[dict_size] = p + dict[c][0];
         dict_size++;
         p = dict[c];
     }
@@ -65,8 +67,11 @@ auto lzw_decode(std::vector<int>& vec) -> std::string {
 int main() {
     auto s = std::string("ABABABA");
     auto ret = lzw(s);
+    auto expected = std::vector<int>{65, 66, 256, 258};
+    assert(ret == expected);
     print(ret);
     auto ss = lzw_decode(ret);
+    assert(ss == "ABABABA");
     std::cout << ss << "\n";
     return 0;
 }
